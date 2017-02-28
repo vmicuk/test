@@ -20,6 +20,20 @@ public class TestOne{
         for(byte b: digest){
             System.out.printf("%02X", b & 0xff);
         }
-        System.out.println();
+	System.out.println();
+	System.out.println();
+        System.out.println(hachKodas("Vitalij Micuk JP16 3"));
     }
+	public static String hachKodas(String textName) throws UnsupportedEncodingException, 
+		NoSuchAlgorithmException {
+	byte[] text = textName.getBytes("8859_1");
+	MessageDigest md = MessageDigest.getInstance("MD5");
+	md.update(text);
+	byte[] digest = md.digest();
+	String mdText = "";
+	for (byte b: digest) {
+		mdText += b & 0xFF;
+	}
+	return mdText;
+}
 }
