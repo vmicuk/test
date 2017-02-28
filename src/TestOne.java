@@ -11,7 +11,7 @@ public class TestOne{
     public static void main(String[] args) throws UnsupportedEncodingException,
             NoSuchAlgorithmException {
         byte[] theTextToDigestAsBytes=
-                "Mano gyvenimas yra labai geras ..."
+                "Mano gyvenimas yra labai geras .."
                         .getBytes("8859_1");
         MessageDigest md= MessageDigest.getInstance("MD5");
         md.update(theTextToDigestAsBytes);
